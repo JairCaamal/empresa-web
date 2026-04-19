@@ -130,3 +130,47 @@ button:hover {
     text-align: center;
     padding: 50px;
 }
+
+/* ===== SERVICIOS ===== */
+
+.servicio-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 320px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.servicio-card h3 {
+    color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.servicio-card button {
+    margin-top: 15px;
+}
+
+/* ===== NOSOTROS ===== */
+
+.titulo-azul {
+    margin-bottom: 20px;
+    color: #007BFF;
+    text-align: center;
+}
+
+.lista-integrantes {
+    line-height: 1.8;
+}
+
+.separador {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+.nota {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+}
