@@ -3,43 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto | Empresa</title>
+
+    <!-- Fuente -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styless.css">
 </head>
 <body>
 
+    <!-- BOTÓN DARK MODE -->
+    <button id="darkModeToggle" class="dark-btn" type="button" aria-label="Alternar modo oscuro">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- HEADER -->
     <header class="header">
         <h1>Contáctanos</h1>
-        <p>Estamos aquí para ayudarte</p>
+        <p>Estamos aquí para ayudarte en lo que necesites</p>
     </header>
 
-    <section class="contact-container">
-        <form class="contact-form">
-            <div class="form-group">
-                <label>Nombre</label>
-                <input type="text" placeholder="Tu nombre" required>
-            </div>
+    <!-- CONTENIDO -->
+    <main>
+        <section class="contact-container">
 
-            <div class="form-group">
-                <label>Correo electrónico</label>
-                <input type="email" placeholder="ejemplo@email.com" required>
-            </div>
+            <!-- FORMULARIO -->
+            <form class="contact-form">
+                <h2>Envíanos un mensaje</h2>
 
-            <div class="form-group">
-                <label>Mensaje</label>
-                <textarea rows="5" placeholder="Escribe tu mensaje..." required></textarea>
-            </div>
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" placeholder="Tu nombre" required>
+                </div>
 
-            <button type="submit">Enviar mensaje</button>
-        </form>
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input id="correo" type="email" placeholder="ejemplo@email.com" required>
+                </div>
 
-        <div class="contact-info">
-            <h2>Información</h2>
-            <p><strong>Email:</strong> contacto@empresa.com</p>
-            <p><strong>Teléfono:</strong> +52 999 123 4567</p>
-            <p><strong>Dirección:</strong> Mérida, Yucatán</p>
-        </div>
-    </section>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+
+                <button type="submit">Enviar mensaje</button>
+            </form>
+
+            <!-- INFORMACIÓN -->
+            <aside class="contact-info">
+                <h2>Información</h2>
+
+                <p><i class="fas fa-envelope"></i> contacto@empresa.com</p>
+                <p><i class="fas fa-phone"></i> +52 999 123 4567</p>
+                <p><i class="fas fa-map-marker-alt"></i> Mérida, Yucatán</p>
+
+            </aside>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 Empresa. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        const toggleBtn = document.getElementById("darkModeToggle");
+        const body = document.body;
+
+        // Detectar modo oscuro del sistema
+        if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            body.classList.add("dark");
+        }
+
+        toggleBtn.addEventListener("click", () => {
+            body.classList.toggle("dark");
+
+            const icon = toggleBtn.querySelector("i");
+            if (body.classList.contains("dark")) {
+                icon.classList.remove("fa-moon");
+                icon.classList.add("fa-sun");
+            } else {
+                icon.classList.remove("fa-sun");
+                icon.classList.add("fa-moon");
+            }
+        });
+    </script>
 
 </body>
 </html>
