@@ -1,4 +1,4 @@
-/* ===== RESET + BASE ===== */
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,12 @@
     transition: all 0.3s ease;
 }
 
+/* ===== BODY ===== */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     background: #f4f6f9;
     color: #333;
+    line-height: 1.6;
 }
 
 /* ===== NAV ===== */
@@ -19,6 +21,7 @@ body {
     gap: 20px;
     background: #333;
     padding: 15px;
+    flex-wrap: wrap;
 }
 
 .nav a {
@@ -59,47 +62,28 @@ body {
 }
 
 /* ===== TARJETAS ===== */
-.contact-form,
-.contact-info,
 .servicio-card {
     background: white;
     padding: 30px;
     border-radius: 15px;
     width: 320px;
+    text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.contact-form:hover,
-.contact-info:hover,
 .servicio-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ===== FORM ===== */
-.form-group {
-    margin-bottom: 20px;
+.servicio-card h3 {
+    color: #007BFF;
+    margin-bottom: 10px;
 }
 
-label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-top: 5px;
-    font-family: inherit;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
-}
-
-input:focus, textarea:focus {
-    border-color: #4facfe;
-    box-shadow: 0 0 10px rgba(79,172,254,0.4);
-    outline: none;
+.servicio-card p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
 }
 
 /* ===== BOTONES ===== */
@@ -124,56 +108,27 @@ button:active {
     transform: scale(0.98);
 }
 
-/* ===== INFO ===== */
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* ===== NUEVA SECCIÓN ===== */
+.extra-section {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.contact-info i {
-    color: #4facfe;
-    text-shadow: 0 0 5px rgba(79,172,254,0.5);
-}
-
-.contact-info p:hover i {
-    transform: scale(1.2);
-    color: #00c6ff;
-}
-
-/* ===== SERVICIOS ===== */
-.servicio-card h3 {
+.extra-section h2 {
     color: #007BFF;
     margin-bottom: 10px;
 }
 
-/* ===== HOME ===== */
-.home {
+/* ===== FOOTER ===== */
+.footer {
     text-align: center;
-    padding: 50px;
-}
-
-/* ===== NOSOTROS ===== */
-.titulo-azul {
-    margin-bottom: 20px;
-    color: #007BFF;
-    text-align: center;
-}
-
-.lista-integrantes {
-    line-height: 1.8;
-}
-
-.separador {
-    margin: 20px 0;
-    border: 0;
-    border-top: 1px solid #eee;
-}
-
-.nota {
-    font-size: 0.9rem;
-    color: #666;
-    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
 }
 
 /* ===== BOTÓN DARK ===== */
@@ -183,70 +138,63 @@ button:active {
     right: 20px;
     width: 45px;
     height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(34, 34, 34, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(34,34,34,0.8);
     color: white;
-    border: none;
     border-radius: 50%;
     cursor: pointer;
-    z-index: 1000;
     font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
-
-.dark-btn:hover {
-    transform: scale(1.1);
-}
-
-/* ===== FOOTER ===== */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
 }
 
 /* ===== MODO OSCURO ===== */
 body.dark {
-    background: #121212;
-    color: #e0e0e0;
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
 body.dark .header {
-    background: linear-gradient(135deg, #141e30, #243b55);
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-body.dark .contact-form,
-body.dark .contact-info,
-body.dark .servicio-card {
-    background: #1e1e1e;
-    color: #ddd;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+body.dark .nav {
+    background: #020617;
 }
 
-body.dark input,
-body.dark textarea {
-    background: #2a2a2a;
-    border: 1px solid #444;
-    color: white;
+body.dark .servicio-card,
+body.dark .extra-section {
+    background: #1e293b;
+    color: #e2e8f0;
 }
 
 body.dark button {
-    background: linear-gradient(135deg, #141e30, #243b55);
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
 }
 
 body.dark .footer {
-    background: #111;
+    background: #020617;
 }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+
     .contact-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .servicio-card {
+        width: 90%;
+    }
+
+    .extra-section {
+        margin: 20px;
     }
 }
