@@ -1,4 +1,4 @@
-/* ===== TU CÓDIGO ORIGINAL (MANTENIDO) ===== */
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
@@ -6,10 +6,12 @@
     transition: all 0.3s ease;
 }
 
+/* ===== BODY ===== */
 body {
     font-family: 'Poppins', Arial, sans-serif;
     background: #f4f6f9;
     color: #333;
+    line-height: 1.6;
 }
 
 .nav {
@@ -18,6 +20,7 @@ body {
     gap: 20px;
     background: #333;
     padding: 15px;
+    flex-wrap: wrap;
 }
 
 .nav a {
@@ -55,72 +58,140 @@ body {
     padding: 40px;
 }
 
-.contact-form,
-.contact-info,
+/* ===== TARJETAS ===== */
 .servicio-card {
     background: white;
     padding: 30px;
     border-radius: 15px;
     width: 320px;
+    text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.contact-form:hover,
-.contact-info:hover,
 .servicio-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-.titulo-azul {
-    margin-bottom: 20px;
+.servicio-card h3 {
     color: #007BFF;
+    margin-bottom: 10px;
+}
+
+.servicio-card p {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* ===== BOTONES ===== */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #4facfe, #00c6ff);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ===== NUEVA SECCIÓN ===== */
+.extra-section {
     text-align: center;
+    padding: 60px 20px;
+    background: white;
+    margin: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.lista-integrantes {
-    line-height: 1.8;
+.extra-section h2 {
+    color: #007BFF;
+    margin-bottom: 10px;
 }
 
-.separador {
-    margin: 20px 0;
-    border: 0;
-    border-top: 1px solid #eee;
-}
-
-.nota {
-    font-size: 0.9rem;
-    color: #666;
+/* ===== FOOTER ===== */
+.footer {
     text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
 }
 
-/* ===== SECCIÓN DE AJUSTES (AÑADIDO AL FINAL) ===== */
-
-/* 1. Evita que la imagen se salga y le da forma */
-.img-fluida-nosotros {
-    width: 110%; /* Ajuste para compensar el padding del cuadro original */
-    margin: -30px -30px 20px -30px; /* Mueve la imagen al borde del cuadro */
-    height: 180px;
-    object-fit: cover;
-    display: block;
+/* ===== BOTÓN DARK ===== */
+.dark-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background: rgba(34,34,34,0.8);
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-/* 2. Repara el texto para que no se encime */
-.contact-info, .contact-form {
-    height: auto; /* Permite que el cuadro crezca según el texto */
-    min-height: 450px;
-    overflow: hidden; /* Mantiene todo limpio adentro */
+/* ===== MODO OSCURO ===== */
+body.dark {
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
-.texto-cuadro p {
-    margin-bottom: 15px; /* Espacio entre párrafos */
-    line-height: 1.6;
+body.dark .header {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.dark .nav {
+    background: #020617;
+}
+
+body.dark .servicio-card,
+body.dark .extra-section {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark button {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+
+body.dark .footer {
+    background: #020617;
 }
 
 /* Ajuste responsive para móviles */
 @media (max-width: 768px) {
+
     .contact-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .servicio-card {
+        width: 90%;
+    }
+
+    .extra-section {
+        margin: 20px;
     }
 }
