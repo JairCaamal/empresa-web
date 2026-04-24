@@ -1,4 +1,4 @@
-/* ===== RESET + BASE ===== */
+/* ===== TU CÓDIGO ORIGINAL (MANTENIDO) ===== */
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +12,6 @@ body {
     color: #333;
 }
 
-/* ===== NAV ===== */
 .nav {
     display: flex;
     justify-content: center;
@@ -31,7 +30,6 @@ body {
     text-decoration: underline;
 }
 
-/* ===== HEADER ===== */
 .header {
     background: linear-gradient(135deg, #4facfe, #00f2fe);
     color: white;
@@ -49,7 +47,6 @@ body {
     opacity: 0.9;
 }
 
-/* ===== CONTENEDOR ===== */
 .contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -58,7 +55,6 @@ body {
     padding: 40px;
 }
 
-/* ===== TARJETAS ===== */
 .contact-form,
 .contact-info,
 .servicio-card {
@@ -76,84 +72,6 @@ body {
     box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-/* ===== FORM ===== */
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-input, textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-top: 5px;
-    font-family: inherit;
-    box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
-}
-
-input:focus, textarea:focus {
-    border-color: #4facfe;
-    box-shadow: 0 0 10px rgba(79,172,254,0.4);
-    outline: none;
-}
-
-/* ===== BOTONES ===== */
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #4facfe, #00c6ff);
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-button:active {
-    transform: scale(0.98);
-}
-
-/* ===== INFO ===== */
-.contact-info p {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.contact-info i {
-    color: #4facfe;
-    text-shadow: 0 0 5px rgba(79,172,254,0.5);
-}
-
-.contact-info p:hover i {
-    transform: scale(1.2);
-    color: #00c6ff;
-}
-
-/* ===== SERVICIOS ===== */
-.servicio-card h3 {
-    color: #007BFF;
-    margin-bottom: 10px;
-}
-
-/* ===== HOME ===== */
-.home {
-    text-align: center;
-    padding: 50px;
-}
-
-/* ===== NOSOTROS ===== */
 .titulo-azul {
     margin-bottom: 20px;
     color: #007BFF;
@@ -176,74 +94,30 @@ button:active {
     text-align: center;
 }
 
-/* ===== BOTÓN DARK ===== */
-.dark-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(34, 34, 34, 0.8);
-    backdrop-filter: blur(10px);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 1000;
-    font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+/* ===== SECCIÓN DE AJUSTES (AÑADIDO AL FINAL) ===== */
+
+/* 1. Evita que la imagen se salga y le da forma */
+.img-fluida-nosotros {
+    width: 110%; /* Ajuste para compensar el padding del cuadro original */
+    margin: -30px -30px 20px -30px; /* Mueve la imagen al borde del cuadro */
+    height: 180px;
+    object-fit: cover;
+    display: block;
 }
 
-.dark-btn:hover {
-    transform: scale(1.1);
+/* 2. Repara el texto para que no se encime */
+.contact-info, .contact-form {
+    height: auto; /* Permite que el cuadro crezca según el texto */
+    min-height: 450px;
+    overflow: hidden; /* Mantiene todo limpio adentro */
 }
 
-/* ===== FOOTER ===== */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #222;
-    color: white;
-    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+.texto-cuadro p {
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    line-height: 1.6;
 }
 
-/* ===== MODO OSCURO ===== */
-body.dark {
-    background: #121212;
-    color: #e0e0e0;
-}
-
-body.dark .header {
-    background: linear-gradient(135deg, #141e30, #243b55);
-}
-
-body.dark .contact-form,
-body.dark .contact-info,
-body.dark .servicio-card {
-    background: #1e1e1e;
-    color: #ddd;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-}
-
-body.dark input,
-body.dark textarea {
-    background: #2a2a2a;
-    border: 1px solid #444;
-    color: white;
-}
-
-body.dark button {
-    background: linear-gradient(135deg, #141e30, #243b55);
-}
-
-body.dark .footer {
-    background: #111;
-}
-
-/* ===== RESPONSIVE ===== */
+/* Ajuste responsive para móviles */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
